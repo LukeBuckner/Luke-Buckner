@@ -1,0 +1,811 @@
+    <body>
+     <header>
+      <div class="container">
+       <nav class="nav">
+        <div class="logo">
+         Luke Buckner
+        </div>
+        <ul class="nav-links">
+         <li>
+          <a href="#about">
+           About
+          </a>
+         </li>
+         <li>
+          <a href="#skills">
+           Skills
+          </a>
+         </li>
+         <li>
+          <a href="#experience">
+           Experience
+          </a>
+         </li>
+         <li>
+          <a href="#projects">
+           Projects
+          </a>
+         </li>
+         <li>
+          <a href="#contact">
+           Contact
+          </a>
+         </li>
+        </ul>
+       </nav>
+      </div>
+     </header>
+
+
+<section class="hero">
+
+   <div class="hero-image">
+   <img alt="Luke Buckner" class="profile-photo" src="me.png"/>
+   </div>
+
+
+
+
+ <div class="container">
+  <div class="hero-content">
+   <div class="hero-text">
+    <h2>
+     <!-- Luke Buckner -->
+    </h2>
+    <div class="subtitle">
+     <!-- Software Engineer -->
+    </div>
+    <p class="description">
+
+        Hello! I'm Luke.
+        <br>
+<br>I'm passionate about the synergy between computer hardware and software and the convergence of science and computation. I have a comprehensive background in computer science and information technology, with expertise ranging from low-level engineering to application development and machine learning.
+    </br>
+<br> My goal is to push boundaries, embrace emerging technologies, and collaborate with like-minded people to make even the most advanced technologies accessible to everyone.
+    </br>
+</p>
+    <div class="science-highlight">
+     <!-- <p>
+      "I'm driven by the intersection of science and computation, from quantum computing and neurotechnology to spatial computing and AI-driven research. My goal is bridging the gap between cutting-edge scientific discovery and practical software applications."
+     </p> -->
+    </div>
+    <div class="cta-buttons">
+     <a class="btn btn-primary" href="#projects">
+      View My Work
+     </a>
+     <a class="btn btn-secondary" href="mailto:danielbuckner75@icloud.com">
+      Get In Touch
+     </a>
+    </div>
+   </div>
+   <!-- <div class="hero-image">
+   <img alt="Luke Buckner" class="profile-photo" src="me.png"/>
+   </div> -->
+   <!DOCTYPE html>
+   <html lang="en">
+    <head>
+     <meta charset="utf-8"/>
+     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+     <title>
+      Luke Buckner - Software Engineer
+     </title>
+     <style>
+      * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #0a0a0a;
+            color: #ffffff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Header */
+        header {
+            padding: 2rem 0;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+            border-bottom: 1px solid #333;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #00d4ff;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #00d4ff;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 6rem 0;
+            text-align: center;
+            background: linear-gradient(135deg, #0f0f1c 0%, #1a1a2e 100%);
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(0, 212, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(0, 212, 255, 0.05) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #ffffff 0%, #00d4ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero .subtitle {
+            font-size: 1.3rem;
+            color: #00d4ff;
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .hero .description {
+            font-size: 1.1rem;
+            color: #ccc;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.8rem 2rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #00d4ff, #6a5acd);
+            box-shadow: 0 4px 12px rgba(106, 90, 205, 0.4);
+    
+            background: #00d4ff;
+            color: #0a0a0a;
+        }
+
+        .btn-primary:hover {
+            background: #00b8e6;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid #6a5acd;
+            color: #6a5acd;
+    
+            background: transparent;
+            color: #00d4ff;
+            border: 2px solid #00d4ff;
+        }
+
+        .btn-secondary:hover {
+            background: #00d4ff;
+            color: #0a0a0a;
+        }
+
+        /* Sections */
+        .section {
+            padding: 4rem 0;
+            border-bottom: 1px solid #222;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #ffffff;
+        }
+
+        /* Skills Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category {
+            background: #1a1a1a;
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid #333;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .skill-category:hover {
+            border-color: #00d4ff;
+            transform: translateY(-5px);
+        }
+
+        .skill-category h3 {
+            color: #00d4ff;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-tag {
+            background: #333;
+            color: #fff;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .skill-tag:hover {
+            background: #00d4ff;
+            color: #0a0a0a;
+        }
+
+        /* Experience */
+        .experience-item {
+            background: #1a1a1a;
+            padding: 2rem;
+            border-radius: 12px;
+            border-left: 4px solid #00d4ff;
+            margin-bottom: 2rem;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .experience-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.1);
+        }
+
+        .experience-item h3 {
+            color: #ffffff;
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .experience-meta {
+            color: #00d4ff;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .experience-item ul {
+            color: #ccc;
+            margin-left: 1rem;
+        }
+
+        .experience-item li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Projects Grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: #1a1a1a;
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid #333;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #00d4ff, #0099cc);
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            border-color: #00d4ff;
+            box-shadow: 0 20px 40px rgba(0, 212, 255, 0.1);
+        }
+
+        .project-card h3 {
+            color: #ffffff;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .project-card p {
+            color: #ccc;
+            margin-bottom: 1rem;
+        }
+
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tech-tag {
+            background: rgba(0, 212, 255, 0.1);
+            color: #00d4ff;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            border: 1px solid rgba(0, 212, 255, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            padding: 3rem 0;
+            text-align: center;
+            background: #1a1a1a;
+            border-top: 1px solid #333;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #00d4ff;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .skills-grid,
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #1a1a1a;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #00d4ff;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #0099cc;
+        }
+      .profile-photo {
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-top: 2rem;
+        opacity: 0;
+        transform: scale(0.9);
+        animation: fadeInScale 1.2s ease forwards;
+        animation-delay: 0.3s;
+    }
+
+    @keyframes fadeInScale {
+        to {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+     </style>
+    </head>
+
+    <br>
+</br>
+     <section class="section" id="skills">
+      <div class="container">
+       <h2 class="section-title">
+        Technical Expertise
+       </h2>
+       <div class="skills-grid">
+        <div class="skill-category">
+         <h3>
+          Languages &amp; Frameworks
+         </h3>
+         <div class="skill-tags">
+          <span class="skill-tag">
+           Swift
+          </span>
+          <span class="skill-tag">
+           Python
+          </span>
+          <span class="skill-tag">
+           C#
+          </span>
+          <span class="skill-tag">
+           Rust
+          </span>
+          <span class="skill-tag">
+           Java
+          </span>
+          <span class="skill-tag">
+           PHP
+          </span>
+          <span class="skill-tag">
+           JavaScript
+          </span>
+          <span class="skill-tag">
+           SwiftUI
+          </span>
+          <span class="skill-tag">
+           RealityKit
+          </span>
+          <span class="skill-tag">
+           Laravel
+          </span>
+         </div>
+        </div>
+        <div class="skill-category">
+         <h3>
+          Platforms &amp; Tools
+         </h3>
+         <div class="skill-tags">
+          <span class="skill-tag">
+           iOS/macOS
+          </span>
+          <span class="skill-tag">
+           Docker
+          </span>
+          <span class="skill-tag">
+           Azure
+          </span>
+          <span class="skill-tag">
+           Git
+          </span>
+          <span class="skill-tag">
+           Xcode
+          </span>
+          <span class="skill-tag">
+           RESTful APIs
+          </span>
+         </div>
+        </div>
+        <div class="skill-category">
+         <h3>
+          Specializations
+         </h3>
+         <div class="skill-tags">
+          <span class="skill-tag">
+           Mobile Development
+          </span>
+          <span class="skill-tag">
+           Spatial Computing
+          </span>
+          <span class="skill-tag">
+           UI/UX Design
+          </span>
+          <span class="skill-tag">
+           Enterprise Systems
+          </span>
+          <span class="skill-tag">
+           AI Research
+          </span>
+         </div>
+        </div>
+       </div>
+      </div>
+     </section>
+     <section class="section" id="experience">
+      <div class="container">
+       <h2 class="section-title">
+        Experience
+       </h2>
+       <div class="experience-item">
+        <h3>
+         Software Development Team Lead - Synapse X
+        </h3>
+        <div class="experience-meta">
+         September 2025 - Present
+        </div>
+        <ul>
+         <li>
+          Lead 15+ engineers developing software for neuroscience and wearable neurotechnology
+         </li>
+         <li>
+          Collaborate with neuroscience teams, translating experimental data (EEG, fNIRS) into binary representations
+         </li>
+         <li>
+          Drive cross-disciplinary integration of research data and hardware prototyping of our Brain-Computer Interface (BCI)
+         </li>
+        </ul>
+       </div>
+       <div class="experience-item">
+        <h3>
+         Software Engineer - Coweta County Government
+        </h3>
+        <div class="experience-meta">
+         July 2023 - Present
+        </div>
+        <ul>
+         <li>
+          Architected in-house software development process serving 1,200+ employees across 40+ departments
+         </li>
+         <li>
+          Co-Lead Developer for Prism, custom-built IT service management platform
+         </li>
+         <li>
+          Created comprehensive Visual Design System ensuring brand cohesion
+         </li>
+         <li>
+          Built automated CI/CD pipelines streamlining the development lifecycle
+         </li>
+        </ul>
+       </div>
+       <div class="experience-item">
+        <h3>
+         AI Research Assistant - University of West Georgia
+        </h3>
+        <div class="experience-meta">
+         August 2024 - Present
+        </div>
+        <ul>
+         <li>
+          Research on Generative AI applications in UAV-assisted networks
+         </li>
+         <li>
+          Machine learning approaches for autonomous decision-making systems
+         </li>
+         <li>
+          Co-authoring research paper for ACM/IEEE publication on AI-driven network security
+         </li>
+        </ul>
+       </div>
+      </div>
+     </section>
+     <section class="section" id="projects">
+      <div class="container">
+       <h2 class="section-title">
+        Featured Projects
+       </h2>
+       <div class="projects-grid">
+        <div class="project-card">
+         <h3>
+          Prism - Enterprise ITSM Platform
+         </h3>
+         <p>
+          Comprehensive IT Service Management solution serving 1,200+ users across 40+ government departments with advanced ticketing, asset management, and automated workflows.
+         </p>
+         <div class="tech-tags">
+          <span class="tech-tag">
+           PHP
+          </span>
+          <span class="tech-tag">
+           Laravel
+          </span>
+          <span class="tech-tag">
+           Livewire
+          </span>
+          <span class="tech-tag">
+           SQL
+          </span>
+         </div>
+        </div>
+
+
+                <div class="project-card">
+         <h3>
+          Flow - Streamlined Onboarding
+         </h3>
+         <p>
+          Comprehensive IT Service Management solution serving 1,200+ users across 40+ government departments with advanced ticketing, asset management, and automated workflows.
+         </p>
+         <div class="tech-tags">
+          <span class="tech-tag">
+           PHP
+          </span>
+          <span class="tech-tag">
+           Laravel
+          </span>
+          <span class="tech-tag">
+           Livewire
+          </span>
+          <span class="tech-tag">
+           SQL
+          </span>
+         </div>
+        </div>
+
+        <div class="project-card">
+         <h3>
+          NeuroVision - Neuroscience at a Glimpse
+         </h3>
+         <p>
+          Educational app with 2,000+ installations featuring immersive 3D brain visualization using cutting-edge spatial computing technologies.
+         </p>
+         <div class="tech-tags">
+          <span class="tech-tag">
+           SwiftUI
+          </span>
+          <span class="tech-tag">
+           RealityKit
+          </span>
+          <span class="tech-tag">
+           Vision Pro
+          </span>
+         </div>
+        </div>
+        <div class="project-card">
+         <h3>
+          EcoImpact - Sustainable Living
+         </h3>
+         <p>
+          iOS platform featuring personalized carbon tracking, ML recommendation engine, and custom data visualizations for environmental impact reduction.
+         </p>
+         <div class="tech-tags">
+          <span class="tech-tag">
+           Swift
+          </span>
+          <span class="tech-tag">
+           iOS
+          </span>
+          <span class="tech-tag">
+           Machine Learning
+          </span>
+         </div>
+        </div>
+       </div>
+      </div>
+     </section>
+     <footer id="contact">
+      <div class="container">
+       <h2 class="section-title">
+        Let's Connect
+       </h2>
+       <div class="footer-links">
+        <a href="mailto:danielbuckner75@icloud.com">
+         Email
+        </a>
+        <a href="https://www.linkedin.com/in/danielbuckner/" target="_blank">
+         LinkedIn
+        </a>
+        <a href="https://github.com/LukeBuckner" target="_blank">
+         GitHub
+        </a>
+        <a href="tel:770-713-6240">
+         770-713-6240
+        </a>
+       </div>
+       <p style="color: #666;">
+        2025 Luke Buckner. Building the future through research and engineering.
+       </p>
+      </div>
+     </footer>
+     <script>
+      // Add smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll-triggered animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections for scroll animations
+        document.querySelectorAll('.section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(30px)';
+            section.style.transition = 'all 0.6s ease';
+            observer.observe(section);
+        });
+     </script>
+    </body>
+   </html>
+   <!-- <img alt="Luke Buckner" class="profile-photo" src="me.png"/> -->
+  </div>
+ </div>
+</section>
