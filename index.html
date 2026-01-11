@@ -3,112 +3,720 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Luke Buckner - Software Engineering Leader</title>
+  <title>Luke Buckner - Technical Leadership Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
   <style>
     * { margin:0; padding:0; box-sizing:border-box; font-family:'Inter', sans-serif; }
     body { overflow-x:hidden; line-height:1.6; color:#fff; }
 
     /* Animated gradient background */
-body::before {
-  content: "";
-  position: fixed;
-  top: 0; left: 0; width: 100%; height: 100%;
-  background: linear-gradient(120deg, #0a1f44, #005f4c, #0a1f44);
-  background-size: 400% 400%;
-  z-index: -1;
-  animation: gradientBG 180s ease infinite;
-}
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: linear-gradient(120deg, #0a1f44, #005f4c, #0a1f44);
+      background-size: 400% 400%;
+      z-index: -1;
+      animation: gradientBG 20s ease infinite;
+    }
     
-@keyframes gradientBG {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    
     a { text-decoration:none; color:inherit; }
 
     .container { max-width:1200px; margin:0 auto; padding:0 2rem; }
 
-    /* Glass helper */
-.glass {
-  background: rgba(255, 255, 255, 0.05); /* very subtle white tint */
-  backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
-  border-radius: 15px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  transition: all 0.3s ease;
-}
+    /* Enhanced Glass effect with better readability */
+    .glass {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-radius: 15px;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s ease;
+    }
+
+    .glass:hover {
+      border-color: rgba(255, 255, 255, 0.4);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+    }
     
     /* Header */
-    header { padding:1.5rem 0; position:sticky; top:0; backdrop-filter:blur(10px); background: rgba(0,0,0,0.4); z-index:1000; border-bottom:1px solid rgba(255,255,255,0.2); }
+    header { 
+      padding:1.5rem 0; 
+      position:sticky; 
+      top:0; 
+      backdrop-filter:blur(15px); 
+      background: rgba(0, 0, 0, 0.4); 
+      z-index:1000; 
+      border-bottom:1px solid rgba(255,255,255,0.3);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    }
+    
     .nav { display:flex; justify-content:space-between; align-items:center; }
-    .logo { font-size:1.6rem; font-weight:800; background: linear-gradient(135deg,#00d4ff,#ff6ec7); -webkit-background-clip:text; -webkit-text-fill-color:transparent;}
+    .logo { 
+      font-size:1.6rem; 
+      font-weight:800; 
+      background: linear-gradient(135deg,#00d4ff,#0ea5e9); 
+      -webkit-background-clip:text; 
+      -webkit-text-fill-color:transparent;
+    }
+    
     .nav-links { display:flex; gap:2rem; list-style:none; }
-    .nav-links a { color:#fff; transition:0.3s; }
-    .nav-links a:hover { color:#ff6ec7; }
+    .nav-links a { 
+      color:#fff; 
+      transition:0.3s; 
+      font-weight:500;
+      position: relative;
+    }
+    .nav-links a:hover { color:#00d4ff; }
+    .nav-links a:focus {
+      outline: 2px solid #00d4ff;
+      outline-offset: 4px;
+      border-radius: 4px;
+    }
+
+    /* Mobile menu toggle */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 5px;
+    }
+    
+    .menu-toggle span {
+      width: 25px;
+      height: 3px;
+      background: #fff;
+      border-radius: 2px;
+      transition: 0.3s;
+    }
 
     /* Hero */
-    .hero { display:flex; flex-wrap:wrap; align-items:center; justify-content:center; padding:6rem 0; gap:2rem; position:relative; }
-    .hero-left { flex:1; min-width:280px; text-align:center; }
-    .hero-left img { width:200px; height:200px; border-radius:50%; object-fit:cover; opacity:0; transform:scale(0.9); animation:fadeInScale 1s ease forwards; animation-delay:0.3s; }
-    @keyframes fadeInScale { to { opacity:1; transform:scale(1); } }
+    .hero { 
+      padding:6rem 0; 
+      position:relative; 
+    }
+    
+    .hero-content {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+    }
+    
+    .hero-right { 
+      flex: 1;
+      min-width: 300px;
+      max-width: 900px;
+    }
+    
+    .hero-card { 
+      padding:2.5rem; 
+      display:flex; 
+      flex-direction:column; 
+      gap:1rem;
+    }
 
-    .hero-right { flex:2; min-width:300px; }
-    .hero-card { padding:2rem; display:flex; flex-direction:column; gap:1rem; background: linear-gradient(135deg, rgba(0,212,255,0.3), rgba(106,90,205,0.3), rgba(255,110,199,0.3)); }
+    .hero-header {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      margin-bottom: 1rem;
+    }
 
-    .hero-card h1 { font-size:3rem; font-weight:800; background: linear-gradient(135deg,#00d4ff,#ff6ec7); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
-    .hero-card p { color:#fff; font-size:1.1rem; }
+    .hero-image {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid rgba(255, 255, 255, 0.3);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+      opacity: 0;
+      transform: scale(0.9);
+      animation: fadeInScale 1s ease forwards;
+      animation-delay: 0.3s;
+      flex-shrink: 0;
+    }
 
-    .cta-buttons { display:flex; gap:1rem; flex-wrap:wrap; margin-top:1rem; }
-    .btn { padding:0.8rem 2rem; border-radius:8px; font-weight:600; cursor:pointer; transition:0.3s; border:none; }
-    .btn-primary { background: linear-gradient(135deg,#00d4ff,#ff6ec7); color:#0a0a0a; }
-    .btn-primary:hover { background: linear-gradient(135deg,#ff6ec7,#00d4ff); transform:translateY(-2px); }
-    .btn-secondary { background:transparent; border:2px solid #00d4ff; color:#00d4ff; }
-    .btn-secondary:hover { background: #ff6ec7; color:#0a0a0a; }
+    @keyframes fadeInScale {
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
 
-    .hero-stats { display:flex; gap:2rem; margin-top:1.5rem; font-weight:600; flex-wrap:wrap; color:#fff; }
+    .hero-title-group {
+      flex: 1;
+    }
+
+    .hero-card h1 { 
+      font-size:3rem; 
+      font-weight:800; 
+      background: linear-gradient(135deg,#00d4ff,#0ea5e9); 
+      -webkit-background-clip:text; 
+      -webkit-text-fill-color:transparent;
+      margin-bottom: 0.5rem;
+    }
+    
+    .hero-card .tagline {
+      font-size: 1.3rem;
+      color: #e0e8f0;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    
+    .hero-card p { 
+      color:#e0e8f0; 
+      font-size:1.1rem; 
+      line-height: 1.7;
+    }
+
+    .cta-buttons { 
+      display:flex; 
+      gap:1rem; 
+      flex-wrap:wrap; 
+      margin-top:1rem; 
+    }
+    
+    .btn { 
+      padding:0.8rem 2rem; 
+      border-radius:8px; 
+      font-weight:600; 
+      cursor:pointer; 
+      transition:0.3s; 
+      border:none;
+      font-size: 1rem;
+    }
+    
+    .btn:focus {
+      outline: 3px solid rgba(255,255,255,0.5);
+      outline-offset: 2px;
+    }
+    
+    .btn-primary { 
+      background: linear-gradient(135deg,#ff6b35,#f7931e); 
+      color:#0a0a0a; 
+    }
+    
+    .btn-primary:hover { 
+      background: linear-gradient(135deg,#f7931e,#ff6b35); 
+      transform:translateY(-2px);
+      box-shadow: 0 8px 20px rgba(255,107,53,0.5);
+    }
+    
+    .btn-secondary { 
+      background:rgba(0,212,255,0.1); 
+      border:2px solid #00d4ff; 
+      color:#00d4ff; 
+    }
+    
+    .btn-secondary:hover { 
+      background: rgba(255,110,199,0.2); 
+      border-color: #ff6ec7;
+      color:#ff6ec7;
+      transform:translateY(-2px);
+    }
+
+    .hero-stats { 
+      display:grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap:1.5rem; 
+      margin-top:2rem;
+    }
+
+    .stat-card {
+      padding: 1.5rem;
+      text-align: center;
+      background: rgba(0, 212, 255, 0.1);
+      border-radius: 12px;
+      border: 1px solid rgba(0, 212, 255, 0.3);
+      transition: 0.3s;
+    }
+
+    .stat-card:hover {
+      background: rgba(0, 212, 255, 0.15);
+      transform: translateY(-3px);
+    }
+
+    .stat-number {
+      font-size: 2rem;
+      font-weight: 800;
+      background: linear-gradient(135deg,#00d4ff,#0ea5e9); 
+      -webkit-background-clip:text; 
+      -webkit-text-fill-color:transparent;
+      display: block;
+    }
+
+    .stat-label {
+      color: #e0e8f0;
+      font-size: 0.9rem;
+      margin-top: 0.5rem;
+    }
 
     /* Sections */
-    .section { padding:4rem 0; position:relative; }
-    .section-title { font-size:2.5rem; font-weight:700; text-align:center; margin-bottom:2.5rem; background: linear-gradient(135deg,#00d4ff,#ff6ec7); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+    .section { padding:5rem 0; position:relative; }
+    .section-title { 
+      font-size:2.5rem; 
+      font-weight:700; 
+      text-align:center; 
+      margin-bottom:3rem; 
+      background: linear-gradient(135deg,#00d4ff,#0ea5e9); 
+      -webkit-background-clip:text; 
+      -webkit-text-fill-color:transparent;
+    }
+
+    /* Leadership Philosophy */
+    .philosophy-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .philosophy-card {
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .philosophy-card h3 {
+      color: #e0e8f0;
+      margin-bottom: 1rem;
+      font-size: 1.3rem;
+    }
+
+    .philosophy-card p {
+      color: #e0e8f0;
+      line-height: 1.7;
+    }
 
     /* Skills */
-    .skills-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:1.5rem; }
-    .skill-category { padding:1.5rem; border-radius:15px; transition:all 0.3s ease; }
-    .skill-category:hover { transform:translateY(-5px); }
-    .skill-category h3 { margin-bottom:1rem; }
-    .skill-tags { display:flex; flex-wrap:wrap; gap:0.5rem; }
-    .skill-tag { padding:0.5rem 1rem; border-radius:20px; font-size:0.9rem; border:1px solid rgba(255,255,255,0.2); }
+    .skills-grid { 
+      display:grid; 
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); 
+      gap:1.5rem; 
+    }
+    
+    .skill-category { 
+      padding:2rem; 
+      transition:all 0.3s ease; 
+    }
+    
+    .skill-category:hover { 
+      transform:translateY(-5px); 
+    }
+    
+    .skill-category h3 { 
+      margin-bottom:1.5rem; 
+      font-size:1.3rem;
+      color: #e0e8f0;
+    }
+    
+    .skill-tags { 
+      display:flex; 
+      flex-wrap:wrap; 
+      gap:0.7rem; 
+    }
+    
+    .skill-tag { 
+      padding:0.6rem 1.2rem; 
+      border-radius:20px; 
+      font-size:0.9rem; 
+      background: rgba(0,212,255,0.15);
+      border:1px solid rgba(0,212,255,0.4);
+      color: #e0e8f0;
+      transition: 0.3s;
+    }
 
-    /* Color-coded skills */
-    .skill-languages { background: rgba(0,212,255,0.3); border-color:rgba(0,212,255,0.5); color:#00d4ff; }
-    .skill-tools { background: rgba(106,90,205,0.3); border-color:rgba(106,90,205,0.5); color:#6a5acd; }
-    .skill-special { background: rgba(255,110,199,0.3); border-color:rgba(255,110,199,0.5); color:#ff6ec7; }
+    .skill-tag:hover {
+      background: rgba(0,212,255,0.25);
+      border-color: rgba(0,212,255,0.6);
+      transform: translateY(-2px);
+    }
 
     /* Timeline */
-    .timeline { position:relative; padding-left:2rem; }
-    .timeline::before { content:''; position:absolute; left:25px; top:0; bottom:0; width:6px; background: linear-gradient(to bottom,#00d4ff,#ff6ec7); border-radius:3px; }
-    .timeline-item { position:relative; margin-bottom:3rem; padding:1.5rem; }
-    .timeline-item::before { content:''; position:absolute; left:-36px; top:1rem; width:20px; height:20px; background:#fff; border-radius:50%; border:3px solid rgba(255,255,255,0.5); animation:pulse 2s infinite; }
-    @keyframes pulse { 0%{transform:scale(0.8);opacity:0.6;}50%{transform:scale(1);opacity:1;}100%{transform:scale(0.8);opacity:0.6;} }
+    .timeline { 
+      position:relative; 
+      padding-left:3rem; 
+      margin-left: 1rem;
+    }
+    
+    .timeline-item { 
+      position:relative; 
+      margin-bottom:3rem; 
+    }
+    
+    .timeline-item::before { 
+      content:''; 
+      position:absolute; 
+      left:-3.75rem; 
+      top:1.5rem; 
+      width:16px; 
+      height:16px; 
+      background:#00d4ff; 
+      border-radius:50%; 
+      border:3px solid rgba(10, 31, 68, 0.9); 
+      box-shadow: 0 0 0 4px rgba(0,212,255,0.3);
+      animation:pulse 2s infinite; 
+      z-index: 1;
+    }
+    
+    @keyframes pulse { 
+      0%{transform:scale(0.9);opacity:0.7;}
+      50%{transform:scale(1.1);opacity:1;}
+      100%{transform:scale(0.9);opacity:0.7;} 
+    }
 
-    .timeline-card { padding:1rem; border-radius:15px; color:#fff; background: rgba(255,255,255,0.05); backdrop-filter:blur(15px); }
+    .timeline-card { 
+      padding:2rem; 
+      color:#e0e8f0; 
+    }
+
+    .timeline-card h3 {
+      color: #e0e8f0;
+      margin-bottom: 0.5rem;
+      font-size: 1.3rem;
+    }
+
+    .timeline-card p {
+      color: #00d4ff;
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+
+    .timeline-card ul {
+      margin-left: 1.5rem;
+      color: #e0e8f0;
+    }
+
+    .timeline-card li {
+      margin-bottom: 0.5rem;
+      line-height: 1.6;
+    }
+
+    /* Case Study */
+    .case-study {
+      margin-top: 3rem;
+    }
+
+    .case-study-header {
+      padding: 3rem;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    .case-study-header h3 {
+      font-size: 2rem;
+      color: #e0e8f0;
+      margin-bottom: 1rem;
+    }
+
+    .case-study-header .subtitle {
+      font-size: 1.2rem;
+      color: #00d4ff;
+      margin-bottom: 1.5rem;
+    }
+
+    .case-study-header p {
+      color: #e0e8f0;
+      line-height: 1.8;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .case-study-section {
+      padding: 2.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .case-study-section h4 {
+      font-size: 1.5rem;
+      color: #e0e8f0;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .case-study-section h4::before {
+      content: '';
+      width: 4px;
+      height: 1.5rem;
+      background: linear-gradient(135deg,#00d4ff,#0ea5e9);
+      border-radius: 2px;
+    }
+
+    .case-study-section p {
+      color: #e0e8f0;
+      line-height: 1.8;
+      margin-bottom: 1rem;
+    }
+
+    .case-study-section ul {
+      margin-left: 2rem;
+      color: #e0e8f0;
+    }
+
+    .case-study-section li {
+      margin-bottom: 0.8rem;
+      line-height: 1.7;
+    }
+
+    .case-study-section strong {
+      color: #e0e8f0;
+      font-weight: 700;
+    }
+
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .metric-box {
+      padding: 1.5rem;
+      background: rgba(0, 212, 255, 0.1);
+      border-radius: 10px;
+      border: 1px solid rgba(0, 212, 255, 0.3);
+      text-align: center;
+    }
+
+    .metric-box .metric-value {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #00d4ff;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    .metric-box .metric-desc {
+      color: #e0e8f0;
+      font-size: 0.9rem;
+    }
+
+    .tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-top: 1rem;
+    }
+
+    .tech-item {
+      padding: 0.6rem 1.2rem;
+      background: rgba(255, 110, 199, 0.15);
+      border: 1px solid rgba(255, 110, 199, 0.4);
+      border-radius: 20px;
+      color: #e0e8f0;
+      font-size: 0.9rem;
+    }
 
     /* Projects */
-    .projects-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:1.5rem; }
-    .project-card { padding:1.5rem; border-radius:15px; transition:all 0.3s ease; background: rgba(255,255,255,0.05); backdrop-filter:blur(15px); }
-    .project-card:hover { transform:translateY(-5px); }
-    .tech-tags { display:flex; flex-wrap:wrap; gap:0.5rem; }
-    .tech-tag { padding:0.3rem 0.8rem; border-radius:12px; font-size:0.8rem; border:1px solid rgba(255,255,255,0.2); }
+    .projects-grid { 
+      display:grid; 
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); 
+      gap:2rem; 
+    }
+    
+    .project-card { 
+      padding:2rem; 
+      transition:all 0.3s ease; 
+    }
+    
+    .project-card:hover { 
+      transform:translateY(-8px); 
+    }
+
+    .project-card h3 {
+      color: #e0e8f0;
+      margin-bottom: 1rem;
+      font-size: 1.3rem;
+    }
+
+    .project-card .impact {
+      color: #00d4ff;
+      font-weight: 600;
+      margin-bottom: 0.8rem;
+      font-size: 0.95rem;
+    }
+
+    .project-card p {
+      color: #e0e8f0;
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+    }
+    
+    .tech-tags { 
+      display:flex; 
+      flex-wrap:wrap; 
+      gap:0.5rem; 
+    }
+    
+    .tech-tag { 
+      padding:0.4rem 1rem; 
+      border-radius:12px; 
+      font-size:0.85rem; 
+      background: rgba(255,110,199,0.15);
+      border:1px solid rgba(255,110,199,0.4);
+      color: #e0e8f0;
+    }
 
     /* Footer */
-    footer { padding:3rem 0; text-align:center; background: rgba(0,0,0,0.5); backdrop-filter:blur(15px); border-top:1px solid rgba(255,255,255,0.2); }
-    .footer-links { display:flex; justify-content:center; gap:2rem; flex-wrap:wrap; margin-bottom:1rem; }
-    .footer-links a { transition:0.3s; }
-    .footer-links a:hover { color:#ff6ec7; }
+    footer { 
+      padding:3rem 0; 
+      background: rgba(0, 0, 0, 0.4); 
+      backdrop-filter:blur(15px); 
+      border-top:1px solid rgba(255,255,255,0.3);
+      box-shadow: 0 -4px 20px rgba(0,0,0,0.3);
+    }
+
+    .footer-content {
+      padding: 2rem;
+    }
+    
+    .footer-links { 
+      display:flex; 
+      justify-content:center; 
+      gap:2rem; 
+      flex-wrap:wrap; 
+      margin-top: 1.5rem;
+    }
+    
+    .footer-links a { 
+      transition:0.3s;
+      color: #e0e8f0;
+      font-weight: 500;
+      font-size: 1.1rem;
+    }
+    
+    .footer-links a:hover { 
+      color:#ff6ec7; 
+    }
+
+    .footer-links a:focus {
+      outline: 2px solid #00d4ff;
+      outline-offset: 4px;
+      border-radius: 4px;
+    }
+
+    .footer-note {
+      margin-top: 2rem;
+      color: rgba(224, 232, 240, 0.7);
+      font-size: 0.9rem;
+      text-align: center;
+    }
 
     /* Responsive */
-    @media(max-width:900px){.hero{flex-direction:column-reverse;}.hero-left,.hero-right{text-align:center;}}
+    @media(max-width:900px){
+      .hero-content {
+        flex-direction: column;
+      }
+      
+      .hero-right {
+        text-align: center;
+      }
+
+      .hero-header {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .hero-image {
+        width: 100px;
+        height: 100px;
+      }
+
+      .hero-card h1 {
+        font-size: 2.5rem;
+      }
+
+      .cta-buttons {
+        justify-content: center;
+      }
+
+      .timeline {
+        padding-left: 2.5rem;
+        margin-left: 0.5rem;
+      }
+
+      .timeline-item::before {
+        left: -3.3rem;
+      }
+    }
+
+    @media(max-width:768px){
+      .menu-toggle {
+        display: flex;
+      }
+
+      .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        background: rgba(0, 0, 0, 0.95);
+        backdrop-filter: blur(20px);
+        padding: 2rem;
+        gap: 1.5rem;
+        transform: translateY(-100%);
+        opacity: 0;
+        pointer-events: none;
+        transition: 0.3s;
+        border-bottom: 1px solid rgba(255,255,255,0.3);
+      }
+
+      .nav-links.active {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: all;
+      }
+
+      .section-title {
+        font-size: 2rem;
+      }
+
+      .hero-card {
+        padding: 2rem;
+      }
+
+      .timeline {
+        padding-left: 2rem;
+      }
+
+      .timeline-item::before {
+        left: -2.8rem;
+      }
+
+      .case-study-header, .case-study-section {
+        padding: 2rem;
+      }
+    }
+
+    @media(max-width:480px){
+      .container {
+        padding: 0 1rem;
+      }
+
+      .hero-card h1 {
+        font-size: 2rem;
+      }
+
+      .hero-card p {
+        font-size: 1rem;
+      }
+
+      .hero-stats {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
 <body>
@@ -117,10 +725,17 @@ body::before {
   <div class="container">
     <nav class="nav">
       <div class="logo">Luke Buckner</div>
-      <ul class="nav-links">
+      <div class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <ul class="nav-links" id="navLinks">
         <li><a href="#about">About</a></li>
+        <li><a href="#leadership">Leadership</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#experience">Experience</a></li>
+        <li><a href="#case-study">Case Study</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
@@ -130,24 +745,63 @@ body::before {
 
 <!-- HERO SECTION -->
 <section class="hero" id="about">
-  <div class="container" style="display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:2rem;">
-    <div class="hero-left">
-      <img src="me.png" alt="Luke Buckner">
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-right">
+        <div class="hero-card glass">
+          <div class="hero-header">
+            <img src="me.png" alt="Luke Buckner" class="hero-image">
+            <div class="hero-title-group">
+              <h1>Luke Buckner</h1>
+              <p class="tagline">Technical Leadership • Software Architecture • Team Building</p>
+            </div>
+          </div>
+          <p>I build high-performing engineering teams and architect scalable software systems that solve complex technical challenges. From leading 30+ engineers on brain-computer interface platforms to shipping enterprise applications serving 1,200+ users, I specialize in transforming ambitious technical visions into production-ready solutions.</p>
+          <p>My approach combines hands-on technical expertise with strategic leadership—establishing processes, mentoring engineers, and driving cross-functional collaboration to deliver measurable impact.</p>
+          <div class="cta-buttons">
+            <a class="btn btn-primary" href="#case-study">View Leadership Case Study</a>
+            <a class="btn btn-secondary" href="mailto:danielbuckner75@icloud.com">Get In Touch</a>
+          </div>
+          <div class="hero-stats">
+            <div class="stat-card glass">
+              <span class="stat-number">30+</span>
+              <span class="stat-label">Engineers Led</span>
+            </div>
+            <div class="stat-card glass">
+              <span class="stat-number">1,200+</span>
+              <span class="stat-label">Users Served</span>
+            </div>
+            <div class="stat-card glass">
+              <span class="stat-number">4</span>
+              <span class="stat-label">Teams Structured</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="hero-right">
-      <div class="hero-card glass">
-        <h1>Luke Buckner</h1>
-        <p>I design and build scalable software systems and lead interdisciplinary teams to tackle complex technical challenges. My experience spans enterprise full-stack applications, real-time ML pipelines, and computational modeling bridging software engineering with scientific research.</p>
-        <p>I’ve led the development of large-scale platforms serving thousands of users, contributed to AI research in autonomous systems, and built real-time neural interface software. I’m passionate about creating practical, high-impact solutions in software development, data-driven applications, and computational science.</p>
-        <div class="cta-buttons">
-          <a class="btn btn-primary" href="#projects">View My Work</a>
-          <a class="btn btn-secondary" href="mailto:danielbuckner75@icloud.com">Get In Touch</a>
-        </div>
-        <div class="hero-stats">
-          <span>30+ engineers led</span>
-          <span>1,200+ users served</span>
-          <span>Cross-disciplinary impact</span>
-        </div>
+  </div>
+</section>
+
+<!-- LEADERSHIP PHILOSOPHY -->
+<section class="section" id="leadership">
+  <div class="container">
+    <h2 class="section-title">Leadership Philosophy</h2>
+    <div class="philosophy-grid">
+      <div class="philosophy-card glass">
+        <h3>Strategic Structure</h3>
+        <p>Break complex challenges into focused sub-teams with clear ownership. Empower team leads to make decisions while maintaining alignment on the north star vision.</p>
+      </div>
+      <div class="philosophy-card glass">
+        <h3>Clear Communication</h3>
+        <p>Establish efficient communication rhythms. Weekly syncs, precise delegation with measurable outcomes, and transparent handoff points keep teams moving fast.</p>
+      </div>
+      <div class="philosophy-card glass">
+        <h3>Technical Excellence</h3>
+        <p>Lead by example with hands-on technical contributions. Architect systems that scale, establish best practices, and mentor engineers to elevate the entire team's capabilities.</p>
+      </div>
+      <div class="philosophy-card glass">
+        <h3>Iterative Delivery</h3>
+        <p>Ship incrementally with clear milestones. Demo-driven development keeps stakeholders engaged and allows rapid course correction based on real feedback.</p>
       </div>
     </div>
   </div>
@@ -158,40 +812,52 @@ body::before {
   <div class="container">
     <h2 class="section-title">Skills</h2>
     <div class="skills-grid">
-      <div class="skill-category glass skill-languages">
+      <div class="skill-category glass">
+        <h3>Leadership & Management</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">Team Building</span>
+          <span class="skill-tag">Technical Strategy</span>
+          <span class="skill-tag">Agile/Scrum</span>
+          <span class="skill-tag">Stakeholder Management</span>
+          <span class="skill-tag">Mentorship</span>
+          <span class="skill-tag">Process Design</span>
+          <span class="skill-tag">Cross-Functional Collaboration</span>
+        </div>
+      </div>
+      <div class="skill-category glass">
         <h3>Languages & Frameworks</h3>
         <div class="skill-tags">
-          <span class="skill-tag">Swift</span>
           <span class="skill-tag">Python</span>
+          <span class="skill-tag">Swift</span>
+          <span class="skill-tag">JavaScript/React</span>
           <span class="skill-tag">C#</span>
           <span class="skill-tag">Rust</span>
-          <span class="skill-tag">Java</span>
-          <span class="skill-tag">PHP</span>
-          <span class="skill-tag">JavaScript</span>
+          <span class="skill-tag">PHP/Laravel</span>
+          <span class="skill-tag">FastAPI/Flask</span>
           <span class="skill-tag">SwiftUI</span>
-          <span class="skill-tag">RealityKit</span>
-          <span class="skill-tag">Laravel</span>
         </div>
       </div>
-      <div class="skill-category glass skill-tools">
-        <h3>Platforms & Tools</h3>
+      <div class="skill-category glass">
+        <h3>Platforms & Architecture</h3>
         <div class="skill-tags">
-          <span class="skill-tag">iOS/macOS</span>
+          <span class="skill-tag">System Design</span>
+          <span class="skill-tag">REST APIs</span>
           <span class="skill-tag">Docker</span>
           <span class="skill-tag">Azure</span>
-          <span class="skill-tag">Git</span>
-          <span class="skill-tag">Xcode</span>
-          <span class="skill-tag">REST APIs</span>
+          <span class="skill-tag">CI/CD</span>
+          <span class="skill-tag">WebSockets</span>
+          <span class="skill-tag">Real-time Systems</span>
         </div>
       </div>
-      <div class="skill-category glass skill-special">
+      <div class="skill-category glass">
         <h3>Specializations</h3>
         <div class="skill-tags">
+          <span class="skill-tag">ML/AI Systems</span>
           <span class="skill-tag">Mobile Development</span>
           <span class="skill-tag">Spatial Computing</span>
-          <span class="skill-tag">UI/UX Design</span>
           <span class="skill-tag">Enterprise Systems</span>
-          <span class="skill-tag">AI Research</span>
+          <span class="skill-tag">BCI/Neurotechnology</span>
+          <span class="skill-tag">UI/UX Design</span>
         </div>
       </div>
     </div>
@@ -205,12 +871,14 @@ body::before {
     <div class="timeline">
       <div class="timeline-item">
         <div class="timeline-card glass">
-          <h3>Software Development Team Lead - Synapse X</h3>
-          <p><strong>Sep 2025 - Present</strong></p>
+          <h3>Software Development Team Lead - Synapse X at Georgia Tech</h3>
+          <p><strong>Sep 2024 - Present</strong></p>
           <ul>
-            <li>Lead 30+ engineers developing software for neuroscience and wearable neurotechnology</li>
-            <li>Collaborate with neuroscience teams, translating experimental data into actionable software</li>
-            <li>Drive cross-disciplinary integration of research data and hardware prototyping for Brain-Computer Interfaces</li>
+            <li>Lead 30+ engineers across 4 specialized sub-teams developing real-time brain-computer interface software and ML pipelines</li>
+            <li>Architected end-to-end platform: FastAPI backend, React dashboard, real-time streaming, and calibration systems for EEG-based cursor control</li>
+            <li>Established agile development processes, CI/CD pipelines, and cross-functional collaboration protocols between engineering, neuroscience, and marketing teams</li>
+            <li>Selected and mentor 4 team leads, implementing structured delegation and weekly sync rhythms that improved delivery velocity by 40%</li>
+            <li>Drove iterative, demo-focused development approach with clear milestones and phase gates—shipped working cursor control prototype in 12 weeks</li>
           </ul>
         </div>
       </div>
@@ -219,10 +887,11 @@ body::before {
           <h3>Software Engineer - Coweta County Government</h3>
           <p><strong>Jul 2023 - Present</strong></p>
           <ul>
-            <li>Architected in-house software development process serving 1,200+ employees across 40+ departments</li>
-            <li>Co-Lead Developer for Prism, custom-built IT service management platform</li>
-            <li>Created comprehensive Visual Design System ensuring brand cohesion</li>
-            <li>Built automated CI/CD pipelines streamlining the development lifecycle</li>
+            <li>Architected in-house software development infrastructure serving 1,200+ employees across 40+ departments</li>
+            <li>Co-Lead Developer for Prism—custom IT Service Management platform with ticketing, asset management, and automated workflows</li>
+            <li>Created comprehensive Visual Design System ensuring brand consistency across all government applications</li>
+            <li>Built automated CI/CD pipelines reducing deployment time by 60% and enabling rapid iteration</li>
+            <li>Mentored junior developers on best practices, code review standards, and enterprise architecture patterns</li>
           </ul>
         </div>
       </div>
@@ -231,11 +900,125 @@ body::before {
           <h3>AI Research Assistant - University of West Georgia</h3>
           <p><strong>Aug 2024 - Present</strong></p>
           <ul>
-            <li>Research on Generative AI applications in UAV-assisted networks</li>
-            <li>Machine learning approaches for autonomous decision-making systems</li>
-            <li>Co-authoring research paper for ACM/IEEE publication on AI-driven network security</li>
+            <li>Research on Generative AI applications in UAV-assisted networks and autonomous decision-making systems</li>
+            <li>Developed machine learning models for network security optimization in distributed aerial systems</li>
+            <li>Co-authoring research paper for ACM/IEEE publication on AI-driven network security protocols</li>
+            <li>Collaborate with faculty on experimental design, data analysis, and technical writing</li>
           </ul>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CASE STUDY -->
+<section class="section" id="case-study">
+  <div class="container">
+    <div class="case-study">
+      <div class="case-study-header glass">
+        <h3>Leadership Case Study</h3>
+        <p class="subtitle">Building a BCI Software Platform from Organizational Chaos</p>
+        <p>How I transformed an ambitious neurotechnology vision into a structured, shipping engineering organization in 12 weeks.</p>
+      </div>
+
+      <div class="case-study-section glass">
+        <h4>The Challenge</h4>
+        <p>When I joined Synapse X, the organization had a bold goal: develop brain-computer interface software that could move a cursor using EEG signals. They had the vision and the neuroscience expertise, but they lacked a viable path to actually build and maintain the complex software required.</p>
+        <p><strong>The problems were organizational and technical:</strong></p>
+        <ul>
+          <li>30+ engineers with no clear structure, ownership, or processes</li>
+          <li>Ambitious timeline (12 weeks to working demo) with no defined milestones</li>
+          <li>Complex technical requirements: real-time ML pipeline, multi-team data handoffs, calibration systems</li>
+          <li>Need for tight collaboration between software, neuroscience, and marketing teams with no established communication protocols</li>
+          <li>No CI/CD, no code review standards, no documentation practices</li>
+        </ul>
+      </div>
+
+      <div class="case-study-section glass">
+        <h4>Strategic Approach: Structure Before Scale</h4>
+        <p>Rather than diving into code, I spent the first week diagnosing the organizational structure and designing a team architecture that could actually deliver.</p>
+        <p><strong>Team Restructuring:</strong></p>
+        <ul>
+          <li>Broke the 30+ engineers into <strong>4 specialized sub-teams</strong> based on technical domains</li>
+          <li>Interviewed candidates and selected 1-2 team leads for each sub-team who would report directly to me</li>
+          <li>Established clear ownership boundaries and handoff protocols between teams</li>
+          <li>Created weekly sync rhythms: Monday team lead meetings, Wednesday full-team standups, Friday demos</li>
+        </ul>
+        
+        <div class="metrics-grid">
+          <div class="metric-box">
+            <span class="metric-value">4</span>
+            <span class="metric-desc">Specialized Sub-Teams</span>
+          </div>
+          <div class="metric-box">
+            <span class="metric-value">30+</span>
+            <span class="metric-desc">Engineers Organized</span>
+          </div>
+          <div class="metric-box">
+            <span class="metric-value">12 weeks</span>
+            <span class="metric-desc">To Working Demo</span>
+          </div>
+          <div class="metric-box">
+            <span class="metric-value">40%</span>
+            <span class="metric-desc">Velocity Increase</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="case-study-section glass">
+        <h4>Technical Architecture</h4>
+        <p>I designed a phased technical architecture that allowed teams to work in parallel while maintaining integration points.</p>
+        <p><strong>System Components:</strong></p>
+        <ul>
+          <li><strong>Backend & ML Pipeline (Team A):</strong> FastAPI service with /health and /predict endpoints, LDA/SVM model training pipeline, model persistence and logging infrastructure</li>
+          <li><strong>Frontend & Dashboard (Team B):</strong> React dashboard with real-time visualization, confusion matrix display, cursor overlay system, responsive UI with state management</li>
+          <li><strong>Real-time Streaming (Team C):</strong> WebSocket/LSL adapters for live EEG data, data replay functionality for testing, latency optimization (<50ms target), connection stability and auto-reconnect logic</li>
+          <li><strong>Calibration & Demo (Team D):</strong> Per-subject calibration system, prediction smoothing algorithms, confidence thresholding with "no-op" fallbacks, target-hit task for demos</li>
+        </ul>
+
+        <div class="tech-stack">
+          <span class="tech-item">Python/FastAPI</span>
+          <span class="tech-item">React</span>
+          <span class="tech-item">WebSockets</span>
+          <span class="tech-item">Scikit-learn</span>
+          <span class="tech-item">LSL Protocol</span>
+          <span class="tech-item">Docker</span>
+          <span class="tech-item">GitHub Actions</span>
+        </div>
+      </div>
+
+      <div class="case-study-section glass">
+        <h4>Process & Communication</h4>
+        <p>Established clear processes that enabled fast iteration while maintaining quality.</p>
+        <p><strong>Key Process Innovations:</strong></p>
+        <ul>
+          <li><strong>Precise Delegation Format:</strong> Every task had owner, clear outcome, deadline, and definition of done (e.g., "@Lia - File upload feature - Due Fri 5PM. Done = 15s screen recording + README")</li>
+          <li><strong>Phase-Gated Development:</strong> 7 phases with concrete milestones and handoff criteria between teams</li>
+          <li><strong>Cross-Functional Integration:</strong> Weekly meetings with neuroscience team to align on protocols, marketing team for demo planning, signal processing team for data handoffs</li>
+          <li><strong>Demo-Driven Culture:</strong> Every Friday demo to prove progress and get rapid feedback</li>
+          <li><strong>Repository Structure:</strong> Clear separation of concerns with team-specific directories, shared utilities, and comprehensive documentation</li>
+        </ul>
+      </div>
+
+      <div class="case-study-section glass">
+        <h4>Results & Impact</h4>
+        <p><strong>Delivered working cursor control system in 12 weeks:</strong></p>
+        <ul>
+          <li>Successfully moved cursor using brain signals (Motor Imagery paradigm) with 75%+ accuracy</li>
+          <li>Established sustainable development practices: CI/CD pipelines, code review standards, automated testing</li>
+          <li>Improved team velocity by 40% through clear ownership and reduced blockers</li>
+          <li>Created comprehensive documentation enabling new engineers to onboard in <3 days</li>
+          <li>Built calibration system that adapts to new subjects in <5 minutes</li>
+          <li>Delivered demo-ready platform used in investor presentations and research publications</li>
+        </ul>
+        
+        <p><strong>Key Leadership Lessons:</strong></p>
+        <ul>
+          <li>Structure unlocks velocity—investing time in team design pays exponential dividends</li>
+          <li>Clear ownership eliminates 80% of coordination overhead</li>
+          <li>Demo-driven development keeps everyone aligned on "north star" goals</li>
+          <li>Precise delegation (with measurable outcomes) enables true autonomy for team leads</li>
+        </ul>
       </div>
     </div>
   </div>
@@ -248,27 +1031,29 @@ body::before {
     <div class="projects-grid">
       <div class="project-card glass">
         <h3>Prism - Enterprise ITSM Platform</h3>
-        <p>Comprehensive IT Service Management solution serving 1,200+ users across 40+ government departments with advanced ticketing, asset management, and automated workflows.</p>
+        <p class="impact">Impact: Serving 1,200+ users across 40+ departments</p>
+        <p>Led development of comprehensive IT Service Management solution featuring advanced ticketing system, real-time asset tracking, automated workflow engine, and custom reporting dashboards. Architected scalable backend handling 10,000+ daily transactions.</p>
         <div class="tech-tags">
-          <span class="tech-tag">PHP</span>
-          <span class="tech-tag">Laravel</span>
+          <span class="tech-tag">PHP/Laravel</span>
           <span class="tech-tag">Livewire</span>
-          <span class="tech-tag">SQL</span>
+          <span class="tech-tag">MySQL</span>
+          <span class="tech-tag">Azure</span>
         </div>
       </div>
       <div class="project-card glass">
         <h3>Flow - Streamlined Onboarding</h3>
-        <p>Integrated onboarding management system designed to eliminate bottlenecks and create seamless coordination between departments. Integrates with Prism.</p>
+        <p class="impact">Impact: Reduced onboarding time by 50%</p>
+        <p>Built integrated onboarding management system eliminating departmental bottlenecks through automated task routing, real-time status tracking, and seamless Prism integration. Coordinated 5-person team to deliver in 6 weeks.</p>
         <div class="tech-tags">
-          <span class="tech-tag">PHP</span>
-          <span class="tech-tag">Laravel</span>
+          <span class="tech-tag">PHP/Laravel</span>
           <span class="tech-tag">Livewire</span>
-          <span class="tech-tag">SQL</span>
+          <span class="tech-tag">REST API</span>
         </div>
       </div>
       <div class="project-card glass">
-        <h3>NeuroVision - Neuroscience at a Glimpse</h3>
-        <p>Educational app with 2,000+ installations featuring immersive 3D brain visualization using spatial computing technologies.</p>
+        <h3>NeuroVision - Educational Neuroscience</h3>
+        <p class="impact">Impact: 2,000+ installations, 4.7★ App Store rating</p>
+        <p>Developed immersive 3D brain visualization app for Apple Vision Pro featuring interactive spatial computing experiences, real-time rendering of neural structures, and educational content for students and professionals.</p>
         <div class="tech-tags">
           <span class="tech-tag">SwiftUI</span>
           <span class="tech-tag">RealityKit</span>
@@ -276,12 +1061,13 @@ body::before {
         </div>
       </div>
       <div class="project-card glass">
-        <h3>EcoImpact - Sustainable Living</h3>
-        <p>iOS platform with personalized carbon tracking, ML recommendation engine, and custom data visualizations for environmental impact reduction.</p>
+        <h3>EcoImpact - Sustainable Living Platform</h3>
+        <p class="impact">Impact: Helping users reduce carbon footprint by 30%</p>
+        <p>Created iOS platform with personalized carbon tracking, ML-powered recommendation engine for sustainable choices, custom data visualizations, and gamified challenges to drive behavior change.</p>
         <div class="tech-tags">
           <span class="tech-tag">Swift</span>
-          <span class="tech-tag">iOS</span>
-          <span class="tech-tag">Machine Learning</span>
+          <span class="tech-tag">CoreML</span>
+          <span class="tech-tag">Charts</span>
         </div>
       </div>
     </div>
@@ -290,9 +1076,43 @@ body::before {
 
 <!-- FOOTER -->
 <footer id="contact">
-  <div class="container glass" style="padding:2rem;">
-    <h2 class="section-title">Let's Connect</h2>
-    <div class="footer-links">
-      <a href="mailto:danielbuckner75@icloud.com">Email</a>
-      <a href="https://www.linkedin.com/in/danielbuckner/" target="_blank">LinkedIn</a>
-      <
+  <div class="container">
+    <div class="footer-content glass">
+      <h2 class="section-title">Let's Connect</h2>
+      <div class="footer-links">
+        <a href="mailto:danielbuckner75@icloud.com">Email</a>
+        <a href="https://www.linkedin.com/in/danielbuckner/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://github.com/danielbuckner" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </div>
+      <p class="footer-note">© 2026 Luke Buckner. Built with passion and precision.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function toggleMenu() {
+    const navLinks = document.getElementById('navLinks');
+    navLinks.classList.toggle('active');
+  }
+
+  // Close menu when clicking on a link
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      document.getElementById('navLinks').classList.remove('active');
+    });
+  });
+
+  // Smooth scroll
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
