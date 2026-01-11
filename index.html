@@ -1,20 +1,290 @@
-Sustainable Living</h3>
-        <p>
-          Developed an iOS platform featuring personalized carbon tracking, ML-based recommendations, and custom data visualizations to help users reduce environmental impact.
-        </p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Luke Buckner - Software Engineering Leader</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; font-family:'Inter', sans-serif; }
+    body { overflow-x:hidden; line-height:1.6; color:#fff; }
+
+    /* Animated gradient background */
+    body::before {
+      content:"";
+      position:fixed;
+      top:0; left:0; width:100%; height:100%;
+      background: linear-gradient(270deg, #00d4ff, #6a5acd, #ff6ec7, #00d4ff);
+      background-size: 800% 800%;
+      z-index:-1;
+      animation: gradientBG 30s ease infinite;
+    }
+    @keyframes gradientBG {
+      0%{background-position:0% 50%;}
+      50%{background-position:100% 50%;}
+      100%{background-position:0% 50%;}
+    }
+
+    a { text-decoration:none; color:inherit; }
+
+    .container { max-width:1200px; margin:0 auto; padding:0 2rem; }
+
+    /* Glass helper */
+    .glass {
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+      border-radius: 15px;
+      border:1px solid rgba(255,255,255,0.2);
+      transition:all 0.3s ease;
+    }
+
+    /* Header */
+    header { padding:1.5rem 0; position:sticky; top:0; backdrop-filter:blur(10px); background: rgba(0,0,0,0.4); z-index:1000; border-bottom:1px solid rgba(255,255,255,0.2); }
+    .nav { display:flex; justify-content:space-between; align-items:center; }
+    .logo { font-size:1.6rem; font-weight:800; color:#fff; background: linear-gradient(135deg,#00d4ff,#ff6ec7); -webkit-background-clip:text; -webkit-text-fill-color:transparent;}
+    .nav-links { display:flex; gap:2rem; list-style:none; }
+    .nav-links a { color:#fff; transition:0.3s; }
+    .nav-links a:hover { color:#ff6ec7; }
+
+    /* Hero */
+    .hero { display:flex; flex-wrap:wrap; align-items:center; justify-content:center; padding:6rem 0; gap:2rem; position:relative; }
+    .hero-left { flex:1; min-width:280px; text-align:center; }
+    .hero-left img { width:200px; height:200px; border-radius:50%; object-fit:cover; opacity:0; transform:scale(0.9); animation:fadeInScale 1s ease forwards; animation-delay:0.3s; }
+    @keyframes fadeInScale { to { opacity:1; transform:scale(1); } }
+
+    .hero-right { flex:2; min-width:300px; }
+    .hero-card { padding:2rem; display:flex; flex-direction:column; gap:1rem; background: linear-gradient(135deg, rgba(0,212,255,0.3), rgba(106,90,205,0.3), rgba(255,110,199,0.3)); }
+
+    .hero-card h1 { font-size:3rem; font-weight:800; background: linear-gradient(135deg,#00d4ff,#ff6ec7); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+    .hero-card p { color:#fff; font-size:1.1rem; }
+
+    .cta-buttons { display:flex; gap:1rem; flex-wrap:wrap; margin-top:1rem; }
+    .btn { padding:0.8rem 2rem; border-radius:8px; font-weight:600; cursor:pointer; transition:0.3s; border:none; }
+    .btn-primary { background: linear-gradient(135deg,#00d4ff,#ff6ec7); color:#0a0a0a; }
+    .btn-primary:hover { background: linear-gradient(135deg,#ff6ec7,#00d4ff); transform:translateY(-2px); }
+    .btn-secondary { background:transparent; border:2px solid #00d4ff; color:#00d4ff; }
+    .btn-secondary:hover { background: #ff6ec7; color:#0a0a0a; }
+
+    .hero-stats { display:flex; gap:2rem; margin-top:1.5rem; font-weight:600; flex-wrap:wrap; color:#fff; }
+
+    /* Sections */
+    .section { padding:4rem 0; position:relative; }
+    .section-title { font-size:2.5rem; font-weight:700; text-align:center; margin-bottom:2.5rem; background: linear-gradient(135deg,#00d4ff,#ff6ec7); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+
+    /* Skills */
+    .skills-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:1.5rem; }
+    .skill-category { padding:1.5rem; border-radius:15px; transition:all 0.3s ease; }
+    .skill-category:hover { transform:translateY(-5px); }
+    .skill-category h3 { margin-bottom:1rem; }
+    .skill-tags { display:flex; flex-wrap:wrap; gap:0.5rem; }
+    .skill-tag { padding:0.5rem 1rem; border-radius:20px; font-size:0.9rem; border:1px solid rgba(255,255,255,0.2); }
+
+    /* Color-coded skills */
+    .skill-languages { background: rgba(0,212,255,0.3); border-color:rgba(0,212,255,0.5); color:#00d4ff; }
+    .skill-tools { background: rgba(106,90,205,0.3); border-color:rgba(106,90,205,0.5); color:#6a5acd; }
+    .skill-special { background: rgba(255,110,199,0.3); border-color:rgba(255,110,199,0.5); color:#ff6ec7; }
+
+    /* Timeline */
+    .timeline { position:relative; padding-left:2rem; }
+    .timeline::before { content:''; position:absolute; left:25px; top:0; bottom:0; width:6px; background: linear-gradient(to bottom,#00d4ff,#ff6ec7); border-radius:3px; }
+    .timeline-item { position:relative; margin-bottom:3rem; padding:1.5rem; }
+    .timeline-item::before { content:''; position:absolute; left:-36px; top:1rem; width:20px; height:20px; background:#fff; border-radius:50%; border:3px solid rgba(255,255,255,0.5); animation:pulse 2s infinite; }
+    @keyframes pulse { 0%{transform:scale(0.8);opacity:0.6;}50%{transform:scale(1);opacity:1;}100%{transform:scale(0.8);opacity:0.6;} }
+
+    .timeline-card { padding:1rem; border-radius:15px; color:#fff; background: rgba(255,255,255,0.05); backdrop-filter:blur(15px); }
+
+    /* Projects */
+    .projects-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:1.5rem; }
+    .project-card { padding:1.5rem; border-radius:15px; transition:all 0.3s ease; background: rgba(255,255,255,0.05); backdrop-filter:blur(15px); }
+    .project-card:hover { transform:translateY(-5px); }
+    .tech-tags { display:flex; flex-wrap:wrap; gap:0.5rem; }
+    .tech-tag { padding:0.3rem 0.8rem; border-radius:12px; font-size:0.8rem; border:1px solid rgba(255,255,255,0.2); }
+
+    /* Footer */
+    footer { padding:3rem 0; text-align:center; background: rgba(0,0,0,0.5); backdrop-filter:blur(15px); border-top:1px solid rgba(255,255,255,0.2); }
+    .footer-links { display:flex; justify-content:center; gap:2rem; flex-wrap:wrap; margin-bottom:1rem; }
+    .footer-links a { transition:0.3s; }
+    .footer-links a:hover { color:#ff6ec7; }
+
+    /* Responsive */
+    @media(max-width:900px){.hero{flex-direction:column-reverse;}.hero-left,.hero-right{text-align:center;}}
+
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <nav class="nav">
+      <div class="logo">Luke Buckner</div>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container hero-left">
+    <img src="me.png" alt="Luke Buckner">
+  </div>
+  <div class="container hero-right">
+    <div class="hero-card glass">
+      <h1>Luke Buckner</h1>
+      <p>I design and build scalable software systems and lead interdisciplinary teams to tackle complex technical challenges. My experience spans enterprise full-stack applications, real-time ML pipelines, and computational modeling bridging software engineering with scientific research.</p>
+      <p>I’ve led the development of large-scale platforms serving thousands of users, contributed to AI research in autonomous systems, and built real-time neural interface software. I’m passionate about creating practical, high-impact solutions in software development, data-driven applications, and computational science.</p>
+      <div class="cta-buttons">
+        <a class="btn btn-primary" href="#projects">View My Work</a>
+        <a class="btn btn-secondary" href="mailto:danielbuckner75@icloud.com">Get In Touch</a>
+      </div>
+      <div class="hero-stats">
+        <span>30+ engineers led</span>
+        <span>1,200+ users served</span>
+        <span>Cross-disciplinary impact</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="skills">
+  <div class="container">
+    <h2 class="section-title">Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-category glass skill-languages">
+        <h3>Languages & Frameworks</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">Swift</span>
+          <span class="skill-tag">Python</span>
+          <span class="skill-tag">C#</span>
+          <span class="skill-tag">Rust</span>
+          <span class="skill-tag">Java</span>
+          <span class="skill-tag">PHP</span>
+          <span class="skill-tag">JavaScript</span>
+          <span class="skill-tag">SwiftUI</span>
+          <span class="skill-tag">RealityKit</span>
+          <span class="skill-tag">Laravel</span>
+        </div>
+      </div>
+      <div class="skill-category glass skill-tools">
+        <h3>Platforms & Tools</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">iOS/macOS</span>
+          <span class="skill-tag">Docker</span>
+          <span class="skill-tag">Azure</span>
+          <span class="skill-tag">Git</span>
+          <span class="skill-tag">Xcode</span>
+          <span class="skill-tag">REST APIs</span>
+        </div>
+      </div>
+      <div class="skill-category glass skill-special">
+        <h3>Specializations</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">Mobile Development</span>
+          <span class="skill-tag">Spatial Computing</span>
+          <span class="skill-tag">UI/UX Design</span>
+          <span class="skill-tag">Enterprise Systems</span>
+          <span class="skill-tag">AI Research</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="experience">
+  <div class="container">
+    <h2 class="section-title">Experience</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-card glass">
+          <h3>Software Development Team Lead - Synapse X</h3>
+          <p><strong>Sep 2025 - Present</strong></p>
+          <ul>
+            <li>Lead 30+ engineers developing software for neuroscience and wearable neurotechnology</li>
+            <li>Collaborate with neuroscience teams, translating experimental data into actionable software</li>
+            <li>Drive cross-disciplinary integration of research data and hardware prototyping for Brain-Computer Interfaces</li>
+          </ul>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-card glass">
+          <h3>Software Engineer - Coweta County Government</h3>
+          <p><strong>Jul 2023 - Present</strong></p>
+          <ul>
+            <li>Architected in-house software development process serving 1,200+ employees across 40+ departments</li>
+            <li>Co-Lead Developer for Prism, custom-built IT service management platform</li>
+            <li>Created comprehensive Visual Design System ensuring brand cohesion</li>
+            <li>Built automated CI/CD pipelines streamlining the development lifecycle</li>
+          </ul>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-card glass">
+          <h3>AI Research Assistant - University of West Georgia</h3>
+          <p><strong>Aug 2024 - Present</strong></p>
+          <ul>
+            <li>Research on Generative AI applications in UAV-assisted networks</li>
+            <li>Machine learning approaches for autonomous decision-making systems</li>
+            <li>Co-authoring research paper for ACM/IEEE publication on AI-driven network security</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="projects">
+  <div class="container">
+    <h2 class="section-title">Featured Projects</h2>
+    <div class="projects-grid">
+      <div class="project-card glass">
+        <h3>Prism - Enterprise ITSM Platform</h3>
+        <p>Comprehensive IT Service Management solution serving 1,200+ users across 40+ government departments with advanced ticketing, asset management, and automated workflows.</p>
+        <div class="tech-tags">
+          <span class="tech-tag">PHP</span>
+          <span class="tech-tag">Laravel</span>
+          <span class="tech-tag">Livewire</span>
+          <span class="tech-tag">SQL</span>
+        </div>
+      </div>
+      <div class="project-card glass">
+        <h3>Flow - Streamlined Onboarding</h3>
+        <p>Integrated onboarding management system designed to eliminate bottlenecks and create seamless coordination between departments. Integrates with Prism.</p>
+        <div class="tech-tags">
+          <span class="tech-tag">PHP</span>
+          <span class="tech-tag">Laravel</span>
+          <span class="tech-tag">Livewire</span>
+          <span class="tech-tag">SQL</span>
+        </div>
+      </div>
+      <div class="project-card glass">
+        <h3>NeuroVision - Neuroscience at a Glimpse</h3>
+        <p>Educational app with 2,000+ installations featuring immersive 3D brain visualization using spatial computing technologies.</p>
+        <div class="tech-tags">
+          <span class="tech-tag">SwiftUI</span>
+          <span class="tech-tag">RealityKit</span>
+          <span class="tech-tag">Vision Pro</span>
+        </div>
+      </div>
+      <div class="project-card glass">
+        <h3>EcoImpact - Sustainable Living</h3>
+        <p>iOS platform with personalized carbon tracking, ML recommendation engine, and custom data visualizations for environmental impact reduction.</p>
         <div class="tech-tags">
           <span class="tech-tag">Swift</span>
           <span class="tech-tag">iOS</span>
           <span class="tech-tag">Machine Learning</span>
         </div>
       </div>
-
     </div>
   </div>
 </section>
 
 <footer id="contact">
-  <div class="container">
+  <div class="container glass" style="padding:2rem;">
     <h2 class="section-title">Let's Connect</h2>
     <div class="footer-links">
       <a href="mailto:danielbuckner75@icloud.com">Email</a>
@@ -22,45 +292,54 @@ Sustainable Living</h3>
       <a href="https://github.com/LukeBuckner" target="_blank">GitHub</a>
       <a href="tel:770-713-6240">770-713-6240</a>
     </div>
-    <p style="color: #666;">
-      2025 Luke Buckner. Building the future through research and engineering.
-    </p>
+    <p style="color: #ccc;">2026 Luke Buckner. Building the future through research and engineering.</p>
   </div>
 </footer>
 
 <script>
   // Smooth scrolling for navigation
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-      e.preventDefault();
-      const target = document.querySelector(this.getAttribute('href'));
-      if (target) {
-        target.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start'
-        });
-      }
-    });
+      anchor.addEventListener('click', function(e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+              target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+      });
   });
 
-  // Scroll-triggered animations
+  // Scroll-triggered animations for sections
   const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
   const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.style.opacity = '1';
-        entry.target.style.transform = 'translateY(0)';
-      }
-    });
+      entries.forEach(entry => {
+          if(entry.isIntersecting){
+              entry.target.style.opacity = '1';
+              entry.target.style.transform = 'translateY(0)';
+          }
+      });
   }, observerOptions);
 
-  document.querySelectorAll('.section').forEach(section => {
-    section.style.opacity = '0';
-    section.style.transform = 'translateY(30px)';
-    section.style.transition = 'all 0.6s ease';
-    observer.observe(section);
+  document.querySelectorAll('.section, .hero-card, .skill-category, .project-card, .timeline-card').forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(30px)';
+      el.style.transition = 'all 0.6s ease';
+      observer.observe(el);
+  });
+
+  // Animated count-up for hero stats
+  const stats = document.querySelectorAll('.hero-stats span');
+  stats.forEach(stat => {
+      const text = stat.textContent.match(/\d+/);
+      if(text){
+          let value = 0;
+          const end = parseInt(text[0]);
+          const interval = setInterval(() => {
+              value++;
+              stat.textContent = stat.textContent.replace(/\d+/, value);
+              if(value >= end) clearInterval(interval);
+          }, 50);
+      }
   });
 </script>
-
 </body>
 </html>
