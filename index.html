@@ -42,7 +42,7 @@
     /* Header */
     header { padding:1.5rem 0; position:sticky; top:0; backdrop-filter:blur(10px); background: rgba(0,0,0,0.4); z-index:1000; border-bottom:1px solid rgba(255,255,255,0.2); }
     .nav { display:flex; justify-content:space-between; align-items:center; }
-    .logo { font-size:1.6rem; font-weight:800; color:#fff; background: linear-gradient(135deg,#00d4ff,#ff6ec7); -webkit-background-clip:text; -webkit-text-fill-color:transparent;}
+    .logo { font-size:1.6rem; font-weight:800; background: linear-gradient(135deg,#00d4ff,#ff6ec7); -webkit-background-clip:text; -webkit-text-fill-color:transparent;}
     .nav-links { display:flex; gap:2rem; list-style:none; }
     .nav-links a { color:#fff; transition:0.3s; }
     .nav-links a:hover { color:#ff6ec7; }
@@ -109,7 +109,6 @@
 
     /* Responsive */
     @media(max-width:900px){.hero{flex-direction:column-reverse;}.hero-left,.hero-right{text-align:center;}}
-
   </style>
 </head>
 <body>
@@ -129,28 +128,32 @@
   </div>
 </header>
 
-<section class="hero">
-  <div class="container hero-left">
-    <img src="me.png" alt="Luke Buckner">
-  </div>
-  <div class="container hero-right">
-    <div class="hero-card glass">
-      <h1>Luke Buckner</h1>
-      <p>I design and build scalable software systems and lead interdisciplinary teams to tackle complex technical challenges. My experience spans enterprise full-stack applications, real-time ML pipelines, and computational modeling bridging software engineering with scientific research.</p>
-      <p>I’ve led the development of large-scale platforms serving thousands of users, contributed to AI research in autonomous systems, and built real-time neural interface software. I’m passionate about creating practical, high-impact solutions in software development, data-driven applications, and computational science.</p>
-      <div class="cta-buttons">
-        <a class="btn btn-primary" href="#projects">View My Work</a>
-        <a class="btn btn-secondary" href="mailto:danielbuckner75@icloud.com">Get In Touch</a>
-      </div>
-      <div class="hero-stats">
-        <span>30+ engineers led</span>
-        <span>1,200+ users served</span>
-        <span>Cross-disciplinary impact</span>
+<!-- HERO SECTION -->
+<section class="hero" id="about">
+  <div class="container" style="display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:2rem;">
+    <div class="hero-left">
+      <img src="me.png" alt="Luke Buckner">
+    </div>
+    <div class="hero-right">
+      <div class="hero-card glass">
+        <h1>Luke Buckner</h1>
+        <p>I design and build scalable software systems and lead interdisciplinary teams to tackle complex technical challenges. My experience spans enterprise full-stack applications, real-time ML pipelines, and computational modeling bridging software engineering with scientific research.</p>
+        <p>I’ve led the development of large-scale platforms serving thousands of users, contributed to AI research in autonomous systems, and built real-time neural interface software. I’m passionate about creating practical, high-impact solutions in software development, data-driven applications, and computational science.</p>
+        <div class="cta-buttons">
+          <a class="btn btn-primary" href="#projects">View My Work</a>
+          <a class="btn btn-secondary" href="mailto:danielbuckner75@icloud.com">Get In Touch</a>
+        </div>
+        <div class="hero-stats">
+          <span>30+ engineers led</span>
+          <span>1,200+ users served</span>
+          <span>Cross-disciplinary impact</span>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- SKILLS -->
 <section class="section" id="skills">
   <div class="container">
     <h2 class="section-title">Skills</h2>
@@ -195,6 +198,7 @@
   </div>
 </section>
 
+<!-- EXPERIENCE -->
 <section class="section" id="experience">
   <div class="container">
     <h2 class="section-title">Experience</h2>
@@ -237,6 +241,7 @@
   </div>
 </section>
 
+<!-- PROJECTS -->
 <section class="section" id="projects">
   <div class="container">
     <h2 class="section-title">Featured Projects</h2>
@@ -283,63 +288,11 @@
   </div>
 </section>
 
+<!-- FOOTER -->
 <footer id="contact">
   <div class="container glass" style="padding:2rem;">
     <h2 class="section-title">Let's Connect</h2>
     <div class="footer-links">
       <a href="mailto:danielbuckner75@icloud.com">Email</a>
       <a href="https://www.linkedin.com/in/danielbuckner/" target="_blank">LinkedIn</a>
-      <a href="https://github.com/LukeBuckner" target="_blank">GitHub</a>
-      <a href="tel:770-713-6240">770-713-6240</a>
-    </div>
-    <p style="color: #ccc;">2026 Luke Buckner. Building the future through research and engineering.</p>
-  </div>
-</footer>
-
-<script>
-  // Smooth scrolling for navigation
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-          e.preventDefault();
-          const target = document.querySelector(this.getAttribute('href'));
-          if (target) {
-              target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          }
-      });
-  });
-
-  // Scroll-triggered animations for sections
-  const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
-  const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-          if(entry.isIntersecting){
-              entry.target.style.opacity = '1';
-              entry.target.style.transform = 'translateY(0)';
-          }
-      });
-  }, observerOptions);
-
-  document.querySelectorAll('.section, .hero-card, .skill-category, .project-card, .timeline-card').forEach(el => {
-      el.style.opacity = '0';
-      el.style.transform = 'translateY(30px)';
-      el.style.transition = 'all 0.6s ease';
-      observer.observe(el);
-  });
-
-  // Animated count-up for hero stats
-  const stats = document.querySelectorAll('.hero-stats span');
-  stats.forEach(stat => {
-      const text = stat.textContent.match(/\d+/);
-      if(text){
-          let value = 0;
-          const end = parseInt(text[0]);
-          const interval = setInterval(() => {
-              value++;
-              stat.textContent = stat.textContent.replace(/\d+/, value);
-              if(value >= end) clearInterval(interval);
-          }, 50);
-      }
-  });
-</script>
-</body>
-</html>
+      <
