@@ -17,9 +17,9 @@ body::before {
   background: linear-gradient(120deg, #0a1f44, #005f4c, #0a1f44);
   background-size: 400% 400%;
   z-index: -1;
-  animation: gradientBG 60s ease infinite;
+  animation: gradientBG 180s ease infinite;
 }
-
+    
 @keyframes gradientBG {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
@@ -30,15 +30,14 @@ body::before {
     .container { max-width:1200px; margin:0 auto; padding:0 2rem; }
 
     /* Glass helper */
-    .glass {
-      background: rgba(255,255,255,0.05);
-      backdrop-filter: blur(15px);
-      -webkit-backdrop-filter: blur(15px);
-      border-radius: 15px;
-      border:1px solid rgba(255,255,255,0.2);
-      transition:all 0.3s ease;
-    }
-
+.glass {
+  background: rgba(255, 255, 255, 0.05); /* very subtle white tint */
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
     /* Header */
     header { padding:1.5rem 0; position:sticky; top:0; backdrop-filter:blur(10px); background: rgba(0,0,0,0.4); z-index:1000; border-bottom:1px solid rgba(255,255,255,0.2); }
     .nav { display:flex; justify-content:space-between; align-items:center; }
