@@ -125,38 +125,6 @@
       gap:1rem;
     }
 
-    .hero-header {
-      display: flex;
-      align-items: center;
-      gap: 2rem;
-      margin-bottom: 1rem;
-    }
-
-    .hero-image {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 3px solid rgba(255, 255, 255, 0.3);
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
-      opacity: 0;
-      transform: scale(0.9);
-      animation: fadeInScale 1s ease forwards;
-      animation-delay: 0.3s;
-      flex-shrink: 0;
-    }
-
-    @keyframes fadeInScale {
-      to {
-        opacity: 1;
-        transform: scale(1);
-      }
-    }
-
-    .hero-title-group {
-      flex: 1;
-    }
-
     .hero-card h1 { 
       font-size:3rem; 
       font-weight:800; 
@@ -602,16 +570,6 @@
         text-align: center;
       }
 
-      .hero-header {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .hero-image {
-        width: 100px;
-        height: 100px;
-      }
-
       .hero-card h1 {
         font-size: 2.5rem;
       }
@@ -726,14 +684,9 @@
     <div class="hero-content">
       <div class="hero-right">
         <div class="hero-card glass">
-          <div class="hero-header">
-            <img src="me.png" alt="Luke Buckner" class="hero-image">
-            <div class="hero-title-group">
-              <h1>Luke Buckner</h1>
-              <p class="tagline">Technical Leadership • Software Architecture • Team Building</p>
-            </div>
-          </div>
-          <p>I build high-performing engineering teams and architect scalable software systems that solve complex technical challenges. From leading 30+ engineers on brain-computer interface platforms to shipping enterprise applications serving 1,200+ users, I specialize in transforming ambitious technical visions into production-ready solutions.</p>
+          <h1>Luke Buckner</h1>
+          <p class="tagline">Technical Leadership • Software Architecture • Team Building</p>
+          <p>I build high-performing engineering teams and architect scalable software systems that solve complex technical challenges. From leading 20+ engineers on brain-computer interface platforms to shipping enterprise applications serving 1,200+ users, I specialize in transforming ambitious technical visions into production-ready solutions.</p>
           <p>My approach combines hands-on technical expertise with strategic leadership—establishing processes, mentoring engineers, and driving cross-functional collaboration to deliver measurable impact.</p>
           <div class="cta-buttons">
             <a class="btn btn-primary" href="#case-study">View Leadership Case Study</a>
@@ -741,7 +694,7 @@
           </div>
           <div class="hero-stats">
             <div class="stat-card glass">
-              <span class="stat-number">30+</span>
+              <span class="stat-number">20+</span>
               <span class="stat-label">Engineers Led</span>
             </div>
             <div class="stat-card glass">
@@ -829,11 +782,12 @@
       <div class="skill-category glass">
         <h3>Specializations</h3>
         <div class="skill-tags">
+          <span class="skill-tag">Software Architecture</span>
           <span class="skill-tag">ML/AI Systems</span>
+          <span class="skill-tag">Real-Time Data Pipelines</span>
           <span class="skill-tag">Mobile Development</span>
-          <span class="skill-tag">Spatial Computing</span>
           <span class="skill-tag">Enterprise Systems</span>
-          <span class="skill-tag">BCI/Neurotechnology</span>
+          <span class="skill-tag">Scientific Computing</span>
           <span class="skill-tag">UI/UX Design</span>
         </div>
       </div>
@@ -851,7 +805,7 @@
           <h3>Software Engineering Manager - Synapse X at Georgia Tech</h3>
           <p><strong>Aug 2025 - Present</strong></p>
           <ul>
-            <li>Lead and manage 30+ engineers across 4 specialized sub-teams developing real-time brain-computer interface software and ML pipelines</li>
+            <li>Lead and manage 20+ engineers across 4 specialized sub-teams developing real-time brain-computer interface software and ML pipelines</li>
             <li>Architected end-to-end platform: FastAPI backend, React dashboard, real-time streaming, and calibration systems for EEG-based cursor control</li>
             <li>Established agile development processes, CI/CD pipelines, and cross-functional collaboration protocols between engineering, neuroscience, and marketing teams</li>
             <li>Selected and mentor 4 team leads, implementing structured delegation and weekly sync rhythms that improved delivery velocity by 40%</li>
@@ -877,7 +831,7 @@
           <h3>AI Research Assistant - University of West Georgia</h3>
           <p><strong>Aug 2024 - Jan 2026</strong></p>
           <ul>
-            <li>Lead author of a research paper titled “Evolution of Artificial Intelligence in Unmanned Aerial Vehicular Networks” for ACM/IEEE publication on Generative AI applications in UAV-assisted networks, with guidance and collaboration with Dr. Mostafizur Rahman</li>
+            <li>Lead author of a research paper titled "Evolution of Artificial Intelligence in Unmanned Aerial Vehicular Networks" for ACM/IEEE publication on Generative AI applications in UAV-assisted networks, with guidance and collaboration with Dr. Mostafizur Rahman</li>
             <li>Researching machine learning history and approaches for autonomous decision-making systems with focus on security optimization</li>
             <li>Analyzing existing ML frameworks and methodologies for UAV network applications</li>
           </ul>
@@ -902,7 +856,7 @@
         <p>When I joined Synapse X, the organization had a bold goal: develop brain-computer interface software that could move a cursor using EEG signals. They had the vision and the neuroscience expertise, but they lacked a viable path to actually build and maintain the complex software required.</p>
         <p><strong>The problems were organizational and technical:</strong></p>
         <ul>
-          <li>30+ engineers with no clear structure, ownership, or processes</li>
+          <li>20+ engineers with no clear structure, ownership, or processes</li>
           <li>Ambitious timeline (12 weeks to working demo) with no defined milestones</li>
           <li>Complex technical requirements: real-time ML pipeline, multi-team data handoffs, calibration systems</li>
           <li>Need for tight collaboration between software, neuroscience, and marketing teams with no established communication protocols</li>
@@ -915,7 +869,7 @@
         <p>Rather than diving into code, I spent the first week diagnosing the organizational structure and designing a team architecture that could actually deliver.</p>
         <p><strong>Team Restructuring:</strong></p>
         <ul>
-          <li>Broke the 30+ engineers into <strong>4 specialized sub-teams</strong> based on technical domains</li>
+          <li>Broke the 20+ engineers into <strong>4 specialized sub-teams</strong> based on technical domains</li>
           <li>Interviewed candidates and selected 1-2 team leads for each sub-team who would report directly to me</li>
           <li>Established clear ownership boundaries and handoff protocols between teams</li>
           <li>Created weekly sync rhythms: Monday team lead meetings, Wednesday full-team standups, Friday demos</li>
@@ -927,7 +881,7 @@
             <span class="metric-desc">Specialized Sub-Teams</span>
           </div>
           <div class="metric-box">
-            <span class="metric-value">30+</span>
+            <span class="metric-value">20+</span>
             <span class="metric-desc">Engineers Organized</span>
           </div>
           <div class="metric-box">
@@ -968,10 +922,10 @@
         <p>Established clear processes that enabled fast iteration while maintaining quality.</p>
         <p><strong>Key Process Innovations:</strong></p>
         <ul>
-          <li><strong>Precise Delegation Format:</strong> Every task had owner, clear outcome, deadline, and definition of done (e.g., "@Lia - File upload feature - Due Fri 5PM. Done = 15s screen recording + README")</li>
+          <li><strong>Precise Delegation Format:</strong> Every task had owner, clear outcome, deadline, and definition of done</li>
           <li><strong>Phase-Gated Development:</strong> 7 phases with concrete milestones and handoff criteria between teams</li>
           <li><strong>Cross-Functional Integration:</strong> Weekly meetings with neuroscience team to align on protocols, marketing team for demo planning, signal processing team for data handoffs</li>
-          <li><strong>Demo-Driven Culture:</strong> Every Friday demo to prove progress and get rapid feedback</li>
+          <li><strong>Demo-Driven Culture:</strong> Every Friday, demo to prove progress and get rapid feedback</li>
           <li><strong>Repository Structure:</strong> Clear separation of concerns with team-specific directories, shared utilities, and comprehensive documentation</li>
         </ul>
       </div>
@@ -1058,7 +1012,7 @@
       <div class="footer-links">
         <a href="mailto:danielbuckner75@icloud.com">Email</a>
         <a href="https://www.linkedin.com/in/danielbuckner/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        <a href="https://github.com/danielbuckner" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://github.com/LukeBuckner" target="_blank" rel="noopener noreferrer">GitHub</a>
       </div>
       <p class="footer-note">© 2026 Luke Buckner. Built with passion and precision.</p>
     </div>
